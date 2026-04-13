@@ -18,7 +18,7 @@ Replace this paragraph with your own summary of what your version does.
 ## How The System Works
 
 Explain your design in plain language.
-
+Real world recommendations works by analyzing your actions on their app, like what you watch, skip, like, search, or replay something. Over time the system build a profile of your preferences. Then the algorithm use machine learning to decide what to show you first. My version will base most of the decisions on the genres of what the user listen to.
 Some prompts to answer:
 
 - What features does each `Song` use in your system
@@ -28,7 +28,25 @@ Some prompts to answer:
 - How do you choose which songs to recommend
 
 You can include a simple diagram or bullet list if helpful.
+flowchart TD
+    A([/"INPUT: User Profile\nfav_genres · fav_mood · fav_energy"/])
+    A --> B[Load songs.csv\n20 songs into memory]
+    B --> C[scored_songs = empty list]
+    C --> D[Pick next unscored song]
 
+    D --> E["CATEGORICAL SCORING\n─────────────────\ngenre match?  × 0.30\nmood match?   × 0.10"]
+    D --> F["NUMERIC SCORING — Gaussian Decay\n──────────────────────────────────\nenergy        × 0.20\ntempo_bpm     × 0.15\nacousticness  × 0.12\nvalence       × 0.08\ndanceability  × 0.05"]
+
+    E --> G["total_score = sum of all\n7 weighted feature scores\nrange: 0.0 → 1.0"]
+    F --> G
+
+    G --> H["Append  song, total_score \nto scored_songs"]
+    H --> I{All 20 songs\nscored?}
+    I -- No --> D
+    I -- Yes --> J["Sort scored_songs by\ntotal_score descending"]
+    J --> K([/"OUTPUT: Return Top K\nRanked Recommendations"/])
+
+<img src = 'recommended_pic.png' title='picture' width='' alt='picture' />
 ---
 
 ## Getting Started
