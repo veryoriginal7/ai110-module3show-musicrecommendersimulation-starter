@@ -3,6 +3,7 @@
 ## 1. Model Name  
 
 Give your model a short, descriptive name.  
+Name: MusiRecreation
 Example: **VibeFinder 1.0**  
 
 ---
@@ -10,7 +11,7 @@ Example: **VibeFinder 1.0**
 ## 2. Intended Use  
 
 Describe what your recommender is designed to do and who it is for. 
-
+My recommender would put out a ranking of songs from first to last base on the user's profile, such as their favorite genres or mood
 Prompts:  
 
 - What kind of recommendations does it generate  
@@ -22,7 +23,7 @@ Prompts:
 ## 3. How the Model Works  
 
 Explain your scoring approach in simple language.  
-
+The scoring mechanic of this recommention would range from 0-1, the closer to 1 the better. To get that number it would match stats such as genres, mood, energy, vibe and if those stats are within the preference of the user, more points would be added to the score.
 Prompts:  
 
 - What features of each song are used (genre, energy, mood, etc.)  
@@ -37,7 +38,7 @@ Avoid code here. Pretend you are explaining the idea to a friend who does not pr
 ## 4. Data  
 
 Describe the dataset the model uses.  
-
+The dataset is just a list of songs (10 songs as for now), and each songs would have details like title, artist, genre, mood, energy, tempo_bpm, valence,danceability, and acousticness. Title, artist, genre, mood, and energy would be a description base on t
 Prompts:  
 
 - How many songs are in the catalog  
