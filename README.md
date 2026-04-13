@@ -47,6 +47,10 @@ flowchart TD
     J --> K([/"OUTPUT: Return Top K\nRanked Recommendations"/])
 
 <img src = 'recommended_pic.png' title='picture' width='' alt='picture' />
+
+<img src = 'profile123.png' title='picture' width='' alt='picture' />
+
+<img src = 'profile45.png' title='picture' width='' alt='picture' />
 ---
 
 ## Getting Started
@@ -221,7 +225,7 @@ Examples:
 
 ## 9. Personal Reflection
 
-A few sentences about what you learned:
+
 
 - What surprised you about how your system behaved
 - How did building this change how you think about real music recommenders
